@@ -22,35 +22,35 @@ Here is the data dictionary for the `schedule-d.csv` file.
   <tbody>
     <tr>
       <td>filer</td>
-      <td></td>
+      <td>The legislator who filed the form.</td>
     </tr>
     <tr>
       <td>filingYear</td>
-      <td></td>
+      <td>The year in which the trip took place.</td>
     </tr>
     <tr>
       <td>sourceName</td>
-      <td></td>
+      <td>The name of the travel sponsor. This field is cleaned so that it is easier to aggregate  sponsored trips across filings.</td>
     </tr>
     <tr>
       <td>amount</td>
-      <td></td>
+      <td>Dollar value of gift.</td>
     </tr>
     <tr>
       <td>date</td>
-      <td></td>
+      <td>Date the gift was given.</td>
     </tr>
     <tr>
       <td>description</td>
-      <td></td>
+      <td>A description of the gift.</td>
     </tr>
     <tr>
       <td>formUrl</td>
-      <td></td>
+      <td>A URL for the original PDF version of the form</td>
     </tr>
     <tr>
       <td>legislatorGlassHouseUrl</td>
-      <td></td>
+      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
     </tr>
   </tbody>
 </table>
