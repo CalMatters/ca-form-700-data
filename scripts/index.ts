@@ -1,6 +1,6 @@
 import { csvFormat } from 'npm:d3-dsv'
 
-import scheduleA from './schedule-a.ts'
+import scheduleA1 from './schedule-a1.ts'
 import scheduleD from './schedule-d.ts'
 import scheduleE from './schedule-e.ts'
 
@@ -11,8 +11,8 @@ const forms = await response.json()
 
 const outputs = [
   {
-    filepath: 'schedule-a.csv',
-    transformer: scheduleA
+    filepath: 'schedule-a1.csv',
+    transformer: scheduleA1
   },
   {
     filepath: 'schedule-d.csv',

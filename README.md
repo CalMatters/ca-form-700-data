@@ -8,6 +8,61 @@ Structured and cleaned financial disclosure data for California legislators from
 
 There are three CSV files generated and each is based on a section, called a "schedule", in the FPPC form.
 
+### Investments - Schedule A1
+
+Here is the data dictionary for the `schedule-a1.csv` file.
+
+<table>
+  <thead>
+    <tr>
+      <th>Column name</th>
+      <th>Description and caveats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filer</td>
+      <td>The legislator who filed the form.</td>
+    </tr>
+    <tr>
+      <td>filingYear</td>
+      <td>The year in which the trip took place.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>The name of the investment.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>Description supplied on the form.</td>
+    </tr>
+    <tr>
+      <td>fmv</td>
+      <td>Fair market value of the asset in buckets.</td>
+    </tr>
+    <tr>
+      <td>nature</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>acquired</td>
+      <td>Date acquired, null when not in the same filing year.</td>
+    </tr>
+    <tr>
+      <td>disposed</td>
+      <td>Date sold, null when not in the same filing year.</td>
+    </tr>
+    <tr>
+      <td>formUrl</td>
+      <td>A URL for the original PDF version of the form.</td>
+    </tr>
+    <tr>
+      <td>legislatorGlassHouseUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Gifts - Schedule D
 
 Here is the data dictionary for the `schedule-d.csv` file.
@@ -46,7 +101,7 @@ Here is the data dictionary for the `schedule-d.csv` file.
     </tr>
     <tr>
       <td>formUrl</td>
-      <td>A URL for the original PDF version of the form</td>
+      <td>A URL for the original PDF version of the form.</td>
     </tr>
     <tr>
       <td>legislatorGlassHouseUrl</td>
