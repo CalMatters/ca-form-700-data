@@ -25,6 +25,10 @@ Here is the data dictionary for the `schedule-d.csv` file.
       <td></td>
     </tr>
     <tr>
+      <td>filingYear</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>sourceName</td>
       <td></td>
     </tr>

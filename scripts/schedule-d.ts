@@ -26,7 +26,7 @@ export default async function extractScheduleDDataFromForms(forms) {
   const gifts = []
 
   contents.forEach(form => {
-    const { id: formId, filer, dGifts } = form
+    const { id: formId, filer, dGifts, filingYear } = form
     const { id: filerId, firstName, lastName } = filer
     
     dGifts.forEach(gift => {
@@ -39,6 +39,7 @@ export default async function extractScheduleDDataFromForms(forms) {
         const { amount, date, address: description } = item
         gifts.push({
           filer: `${firstName} ${lastName}`,
+          filingYear,
           sourceName: normalizeSourceName(sourceName, dedupes),
           amount,
           date,
