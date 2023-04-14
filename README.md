@@ -8,6 +8,49 @@ Structured and cleaned financial disclosure data for California legislators from
 
 There are three CSV files generated and each is based on a section, called a "schedule", in the FPPC form.
 
+### Gifts - Schedule D
+
+Here is the data dictionary for the `schedule-d.csv` file.
+
+<table>
+  <thead>
+    <tr>
+      <th>Column name</th>
+      <th>Description and caveats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filer</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>sourceName</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>amount</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>formUrl</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>legislatorGlassHouseUrl</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
 ### Sponsored trips - Schedule E
 
 Here is the data dictionary for the `schedule-e.csv` file.
