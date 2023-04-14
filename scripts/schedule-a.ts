@@ -1,3 +1,3 @@
-export default function extractScheduleADataFromForms(forms) {
+export default async function extractScheduleADataFromForms(forms) {
   return []
 }

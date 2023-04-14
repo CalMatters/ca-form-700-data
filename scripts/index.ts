@@ -28,7 +28,7 @@ console.log(`Found ${forms.length} forms, turning into ${outputs.length} CSV fil
 
 const out = outputs.map(async output => {
   const { filepath, transformer } = output
-  const data = transformer(forms)
+  const data = await transformer(forms)
   const csv = csvFormat(data)
 
   console.log(`Saving ${data.length.toLocaleString('en-US')} rows to ${filepath}`)
