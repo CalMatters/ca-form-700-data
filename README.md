@@ -84,3 +84,17 @@ Here is the data dictionary for the `schedule-e.csv` file.
 If you use this dataset, please mention it was collected and cleaned by CalMatters. If you have any questions about this dataset, feel free to contact us.
 
 [CalMatters](https://calmatters.org/) is a nonpartisan, nonprofit journalism venture committed to explaining how California’s state Capitol works and why it matters.
+
+## Credits
+
+The FPPC publishes only the PDF versions of each filing, though many of them are submitted electronically. This data set was created by people going through all of the forms and creating structured data. The contributors are:
+
+* Jeremia Kimelman
+* John Osborn D'Agostino
+* Erica Yee
+* Alesha Riani Blaauw
+* Cristian Gonzalez
+* Emma Hall
+* Hailey Valdivia
+* Mercy Sosa
+* Nancy Rodriguez
