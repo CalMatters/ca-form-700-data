@@ -22,47 +22,47 @@ Here is the data dictionary for the `schedule-e.csv` file.
   <tbody>
     <tr>
       <td>filer</td>
-      <td></td>
+      <td>The legislator who filed the form.</td>
     </tr>
     <tr>
       <td>filingYear</td>
-      <td></td>
+      <td>The year in which the trip took place.</td>
     </tr>
     <tr>
       <td>sourceName</td>
-      <td></td>
+      <td>The name of the travel sponsor. This field is cleaned so that it is easier to aggregate  sponsored trips across filings.</td>
     </tr>
     <tr>
       <td>address</td>
-      <td></td>
+      <td>Address of the source from the filing</td>
     </tr>
     <tr>
       <td>cityAndState</td>
-      <td></td>
+      <td>City and state of the source from the filing</td>
     </tr>
     <tr>
       <td>amount</td>
-      <td></td>
+      <td>Dollars spent on travel</td>
     </tr>
     <tr>
       <td>onDate</td>
-      <td></td>
+      <td>Starting date of sponsored travel</td>
     </tr>
     <tr>
       <td>throughDate</td>
-      <td></td>
+      <td>End date of sponsored travel</td>
     </tr>
     <tr>
       <td>giftOrIncome</td>
-      <td></td>
+      <td>From the original filing</td>
     </tr>
     <tr>
       <td>madeASpeechParticipatedInPanel</td>
-      <td></td>
+      <td>From the original filing</td>
     </tr>
     <tr>
       <td>giftTravelDestination</td>
-      <td></td>
+      <td>The place the legislator traveled to.</td>
     </tr>
     <tr>
       <td>otherDescription</td>
@@ -70,11 +70,11 @@ Here is the data dictionary for the `schedule-e.csv` file.
     </tr>
     <tr>
       <td>formUrl</td>
-      <td></td>
+      <td>A URL for the original PDF version of the form</td>
     </tr>
     <tr>
       <td>legislatorGlassHouseUrl</td>
-      <td></td>
+      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
     </tr>
   </tbody>
 </table>
