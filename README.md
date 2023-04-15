@@ -38,7 +38,7 @@ Here is the data dictionary for the `schedule-a1.csv` file.
     </tr>
     <tr>
       <td>fmv</td>
-      <td>Fair market value of the asset in buckets.</td>
+      <td>"Fair market value" of the asset, categorized as one of the following: $2k - $10k, $10k - $100k, $100k - $1m, $1m+.</td>
     </tr>
     <tr>
       <td>nature</td>
