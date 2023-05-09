@@ -5,7 +5,8 @@ import scheduleD from './schedule-d.ts'
 import scheduleE from './schedule-e.ts'
 
 console.log(`Fetching data from API`)
-const apiUrl = `https://calmatters-disclosure-disco.netlify.app/forms.json`
+const token = Deno.env.get("API_TOKEN")
+const apiUrl = `https://calmatters-disclosure-disco.netlify.app/forms.json?token=${token}`
 const response = await fetch(apiUrl)
 const forms = await response.json()
 
