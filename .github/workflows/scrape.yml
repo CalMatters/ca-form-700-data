@@ -16,7 +16,7 @@ jobs:
         with:
           deno-version: v1.x
       - name: Pull data from API and save to CSV files
-        run: deno run --allow-write --allow-net ./scripts/index.ts
+        run: deno run --allow-write --allow-net --allow-env ./scripts/index.ts
       - name: Commit and push if it changed
         run: |-
           git config user.name "Automated"
