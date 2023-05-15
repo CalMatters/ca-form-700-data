@@ -91,7 +91,7 @@ Here is the data dictionary for the `schedule-d.csv` file.
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the travel sponsor, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a>).</td>
+      <td>The name of the travel sponsor, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a>.</td>
     </tr>
     <tr>
       <td>amount</td>
@@ -144,7 +144,7 @@ Here is the data dictionary for the `schedule-e.csv` file.
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the travel sponsor, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1594622565&single=true">this spreadsheet</a>).</td>
+      <td>The name of the travel sponsor, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1594622565&single=true">this spreadsheet</a>.</td>
     </tr>
     <tr>
       <td>address</td>
