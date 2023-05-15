@@ -199,6 +199,10 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 
 [CalMatters](https://calmatters.org/) is a nonpartisan, nonprofit journalism venture committed to explaining how California’s state Capitol works and why it matters.
 
+## Stories and projects that use this data
+
+* ["How free trips for California legislators lead to bills"](https://calmatters.org/politics/california-legislature/2023/05/california-legislature-trips-bills/) (CalMatters)
+
 ## Credits
 
 The FPPC publishes only the PDF versions of each filing, though many of them are submitted electronically. This data set was created by people going through all of the forms and creating structured data. The contributors are:
