@@ -4,6 +4,12 @@ Structured and cleaned financial disclosure data for California legislators from
 
 [![Scrape financial disclosure data](https://github.com/CalMatters/ca-form-700-data/actions/workflows/scrape.yml/badge.svg)](https://github.com/CalMatters/ca-form-700-data/actions/workflows/scrape.yml)
 
+## Methodology
+
+The data was extracted from the PDFs by humans retyping all of the information, attempting to match the exact information on the form at all times. This means that some spelling mistakes
+
+Some CSV files have their own methodological concerns, but all of the names of people and organizations are normalized so that the data is easily compared and grouped. This is done with a two column lookup table per data schedule managed as a Google spreadsheet. The relevant spreadsheet is linked below with the appropriate data column.
+
 ## Data files
 
 There are three CSV files generated and each is based on a section, called a "schedule", in the FPPC form.
@@ -30,7 +36,7 @@ Here is the data dictionary for the `schedule-a1.csv` file.
     </tr>
     <tr>
       <td>name</td>
-      <td>The name of the investment.</td>
+      <td>The name of the investment, normalized with [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1910584700&single=true).</td>
     </tr>
     <tr>
       <td>description</td>
@@ -85,7 +91,7 @@ Here is the data dictionary for the `schedule-d.csv` file.
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the travel sponsor. This field is cleaned so that it is easier to aggregate  sponsored trips across filings.</td>
+      <td>The name of the travel sponsor, normalized with [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true).</td>
     </tr>
     <tr>
       <td>amount</td>
@@ -110,6 +116,12 @@ Here is the data dictionary for the `schedule-d.csv` file.
   </tbody>
 </table>
 
+#### Things to look out for when working with gift data
+
+Some legislators reported taking gifts that exceeded the FPPC's annual per-source limit ($520 in 2022) and included a note that says they returned the part of the gift exceeding the amount. This note isn't captured anywhere in our data, so if you notice anybody reporting a haul over the legal limit you should also look at the submitted form to confirm the legislator didn't return part of the gift. You can use the PDF available in the `formUrl` column for each gift.
+
+Asm. Marie Waldron reported a gift total of over $3k in [her 2022 form](https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/eabd7aeb-88ee-481d-9d4e-a7e215bb665e.pdf) but it appears to be travel that should have been reported in Schedule E instead. CalMatters reached out to her office for clarification but has yet to hear back.
+
 ### Sponsored trips - Schedule E
 
 Here is the data dictionary for the `schedule-e.csv` file.
@@ -132,7 +144,7 @@ Here is the data dictionary for the `schedule-e.csv` file.
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the travel sponsor. This field is cleaned so that it is easier to aggregate  sponsored trips across filings.</td>
+      <td>The name of the travel sponsor, normalized with [this spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1594622565&single=true).</td>
     </tr>
     <tr>
       <td>address</td>
