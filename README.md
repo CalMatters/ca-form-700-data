@@ -6,9 +6,9 @@ Structured and cleaned financial disclosure data for California legislators from
 
 ## Methodology
 
-The data was extracted from the PDFs by humans retyping all of the information, attempting to match the exact information on the form at all times. This means that some spelling mistakes
+The data is extracted by journalists from the legislator-submitted PDF versions of the forms which are downloaded from the FPPC. We attempt to match the reported information on the form to the extent possible.
 
-Some CSV files have their own methodological concerns, but all of the names of people and organizations are normalized so that the data is easily compared and grouped. This is done with a two column lookup table per data schedule managed as a Google spreadsheet. The relevant spreadsheet is linked below with the appropriate data column.
+All of the names of people and organizations are subsequently normalized so that the data is easily compared and grouped. This is done with a two column lookup table per data schedule managed as a Google spreadsheet which is linked below with the cleaned data column.
 
 ## Data files
 
