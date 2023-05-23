@@ -202,6 +202,7 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 ## Stories and projects that use this data
 
 * ["How free trips for California legislators lead to bills"](https://calmatters.org/politics/california-legislature/2023/05/california-legislature-trips-bills/) (CalMatters)
+* ["This law should reveal who's paying for California legislators' travel. It's only been used twice"](https://calmatters.org/politics/california-legislature/2023/05/california-legislators-travel-disclosure/) (CalMatters)
 
 ## Credits
 
