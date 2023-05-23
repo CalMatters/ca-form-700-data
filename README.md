@@ -87,11 +87,11 @@ Here is the data dictionary for the `schedule-d.csv` file.
     </tr>
     <tr>
       <td>filingYear</td>
-      <td>The year in which the trip took place.</td>
+      <td>The year in which the gift was given.</td>
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the travel sponsor, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a>.</td>
+      <td>The name of the gift giver, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a>.</td>
     </tr>
     <tr>
       <td>amount</td>
