@@ -32,7 +32,7 @@ Here is the data dictionary for the `schedule-a1.csv` file.
     </tr>
     <tr>
       <td>filingYear</td>
-      <td>The year in which the trip took place.</td>
+      <td>The year in which the investment was owned, bought, or sold.</td>
     </tr>
     <tr>
       <td>name</td>
