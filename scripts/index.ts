@@ -9,6 +9,10 @@ const token = Deno.env.get("API_TOKEN")
 const apiUrl = `https://calmatters-disclosure-disco.netlify.app/forms.json?token=${token}`
 const response = await fetch(apiUrl)
 const forms = await response.json()
+// we use george washington for some testing data
+const formsWithoutGW = forms.filter(d => {
+  return d.filerId !== "george-washington"
+})
 
 const outputs = [
   {
@@ -29,7 +33,7 @@ console.log(`Found ${forms.length} forms, turning into ${outputs.length} CSV fil
 
 const out = outputs.map(async output => {
   const { filepath, transformer } = output
-  const data = await transformer(forms)
+  const data = await transformer(formsWithoutGW)
   const csv = csvFormat(data)
 
   console.log(`Saving ${data.length.toLocaleString('en-US')} rows to ${filepath}`)
