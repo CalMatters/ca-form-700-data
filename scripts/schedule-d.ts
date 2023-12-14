@@ -1,3 +1,4 @@
+import _ from 'npm:lodash'
 import { sum } from 'npm:d3-array'
 import { csvParse } from 'npm:d3-dsv'
 
@@ -50,5 +51,11 @@ export default async function extractScheduleDDataFromForms(forms) {
       })
     })      
   })
-  return gifts
+
+  const sorted = _.orderBy(gifts, [d => {
+    const [firstName, lastName] = d.filer.split(' ' )
+    return lastName
+  }, 'filer', 'filingYear', 'sourceName', 'date', 'amount', 'description'])
+
+  return sorted
 }

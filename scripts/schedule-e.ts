@@ -1,3 +1,4 @@
+import _ from 'npm:lodash'
 import { csvParse } from 'npm:d3-dsv'
 
 async function fetchCsv() {
@@ -62,5 +63,10 @@ export default async function extractScheduleEDataFromForms(forms) {
     })      
   })
 
-  return incomes
+  const sorted = _.orderBy(incomes, [d => {
+    const [firstName, lastName] = d.filer.split(' ' )
+    return lastName
+  }, 'filer', 'filingYear', 'sourceName', 'onDate', 'amount', 'giftTravelDestination'])
+
+  return sorted
 }
