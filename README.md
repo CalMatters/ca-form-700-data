@@ -203,6 +203,7 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 
 * ["How free trips for California legislators lead to bills"](https://calmatters.org/politics/california-legislature/2023/05/california-legislature-trips-bills/) (CalMatters)
 * ["This law should reveal who's paying for California legislators' travel. It's only been used twice"](https://calmatters.org/politics/california-legislature/2023/05/california-legislators-travel-disclosure/) (CalMatters)
+* ["Environmentalists investing in Big Oil? Inside the surprising stock portfolios of California lawmakers"](https://www.latimes.com/california/story/2023-12-17/environmentalists-investing-in-big-oil-how-california-lawmakers-stocks-dont-align-with-their-politics) (LA Times)
 * [Glass House: California Legislator Tracker](https://calmatters.org/legislator-tracker/home/) (CalMatters)
 
 ## Credits
