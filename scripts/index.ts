@@ -1,6 +1,7 @@
 import { csvFormat } from 'npm:d3-dsv'
 
 import scheduleA1 from './schedule-a1.ts'
+import scheduleCIncome from './schedule-c-income.ts'
 import scheduleD from './schedule-d.ts'
 import scheduleE from './schedule-e.ts'
 
@@ -18,6 +19,10 @@ const outputs = [
   {
     filepath: 'schedule-a1.csv',
     transformer: scheduleA1
+  },
+  {
+    filepath: 'schedule-c-income.csv',
+    transformer: scheduleCIncome
   },
   {
     filepath: 'schedule-d.csv',

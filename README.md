@@ -69,6 +69,76 @@ Here is the data dictionary for the `schedule-a1.csv` file.
   </tbody>
 </table>
 
+### Income received - Schedule C
+
+Here is the data dictionary for the `schedule-c-income.csv` file.
+
+<table>
+  <thead>
+    <tr>
+      <th>Column name</th>
+      <th>Description and caveats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>filer</td>
+      <td>The legislator who filed the form.</td>
+    </tr>
+    <tr>
+      <td>filingYear</td>
+      <td>The year in which the gift was given.</td>
+    </tr>
+    <tr>
+      <td>sourceName</td>
+      <td>The name of the source of the income</td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td>The address of the source</td>
+    </tr>
+    <tr>
+      <td>businessActivity</td>
+      <td>A general description of the business activity if
+      the source is a business entity</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>The position held with the entity</td>
+    </tr>
+    <tr>
+      <td>grossIncome</td>
+      <td>Total amount of income before deducting
+      expenses, losses, or taxes and includes loans other
+      than loans from a commercial lending institutio</td>
+    </tr>
+    <tr>
+      <td>consideration</td>
+      <td>The reason the income was received</td>
+    </tr>
+    <tr>
+      <td>saleOf</td>
+      <td>The item that was sold if the income was from a sale</td>
+    </tr>
+    <tr>
+      <td>commissionOrRentalIncomeDescription</td>
+      <td>A description of what was commissioned or rented</td>
+    </tr>
+    <tr>
+      <td>otherDescription</td>
+      <td>A description of "other" considerations</td>
+    </tr>
+    <tr>
+      <td>formUrl</td>
+      <td>A URL for the original PDF version of the form.</td>
+    </tr>
+    <tr>
+      <td>legislatorGlassHouseUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Gifts - Schedule D
 
 Here is the data dictionary for the `schedule-d.csv` file.
