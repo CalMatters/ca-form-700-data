@@ -63,7 +63,18 @@ export default async function extractScheduleEDataFromForms(forms) {
     })      
   })
 
-  const sorted = _.orderBy(incomes, [d => {
+  const overridden = incomes.map(d => {
+    const { formUrl, amount } = d
+
+    // zbur 2023 form was missing a decimal place
+    if (formUrl.includes('59ca2a97-4e91-45e5-bdb7-f4c7cf56ab57') && amount === 107562) {
+      d.amount = 1075.62
+    }
+
+    return d
+  })
+
+  const sorted = _.orderBy(overridden, [d => {
     const [firstName, lastName] = d.filer.split(' ' )
     return lastName
   }, 'filer', 'filingYear', 'sourceName', 'onDate', 'amount', 'giftTravelDestination'])
