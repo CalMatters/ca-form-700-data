@@ -13,7 +13,7 @@ async function fetchCsv() {
 function normalizeInvestmentName(name, dedupes) {
   const trimmed = name.trim();
   const match = dedupes.find((d) => d.name.trim() === trimmed);
-  return match ? match.cleaned : trimmed;
+  return match ? match.cleaned.trim() : trimmed;
 }
 
 export default async function extractScheduleA1DataFromForms(forms) {
@@ -31,7 +31,13 @@ export default async function extractScheduleA1DataFromForms(forms) {
     const { id: filerId, firstName, lastName } = filer;
 
     a1Investments.forEach((investment) => {
-      const { fmv, name, nature, acquired, disposed, description } = investment;
+      const { fmv, name, acquired, disposed } = investment;
+      let { nature, description } = investment
+
+      if (nature === "" && description.trim() === "Stock") {
+        nature = "Stock"
+      }
+
       investments.push({
         filer: `${firstName} ${lastName}`,
         filingYear,

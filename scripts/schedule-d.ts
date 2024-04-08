@@ -4,7 +4,7 @@ import { csvParse } from "npm:d3-dsv";
 
 async function fetchCsv() {
   const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pub?gid=118444411&single=true&output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pub?gid=59744402&single=true&output=csv";
   const response = await fetch(url);
   const text = await response.text();
   const data = csvParse(text);
@@ -12,10 +12,10 @@ async function fetchCsv() {
 }
 
 function normalizeSourceName(sourceName, dedupes) {
-  const match = dedupes.find((d) =>
-    d.sourceName.toLowerCase() === sourceName.trim().toLowerCase()
-  );
-  return match ? match["correctedName"] : sourceName;
+  if (!sourceName || !sourceName.trim) return "";
+  const trimmed = sourceName.trim();
+  const match = dedupes.find((d) => d.Original.trim() === trimmed);
+  return match ? match["Normalized"] : trimmed;
 }
 
 export default async function extractScheduleDDataFromForms(forms) {

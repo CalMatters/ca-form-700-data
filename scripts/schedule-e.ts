@@ -3,7 +3,7 @@ import { csvParse } from "npm:d3-dsv";
 
 async function fetchCsv() {
   const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pub?gid=1594622565&single=true&output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pub?gid=59744402&single=true&output=csv";
   const response = await fetch(url);
   const text = await response.text();
   const data = csvParse(text);
@@ -14,7 +14,8 @@ function normalizeSourceName(sourceName, dedupes) {
   if (!sourceName || !sourceName.trim) return "";
   const trimmed = sourceName.trim();
   const match = dedupes.find((d) => d.Original.trim() === trimmed);
-  return match ? match["Should be"] : trimmed;
+
+  return match ? match["Normalized"] : trimmed;
 }
 
 export default async function extractScheduleEDataFromForms(forms) {
@@ -45,10 +46,17 @@ export default async function extractScheduleEDataFromForms(forms) {
         madeASpeechParticipatedInPanel,
       } = income;
 
+      const filer = `${firstName} ${lastName}`
+      const normalizedSourceName = normalizeSourceName(sourceName, dedupes)
+
+      if (sourceName && sourceName.includes('The Council of State Governments West')) {
+        console.log(filer, sourceName, '-', normalizedSourceName)
+      }
+
       incomes.push({
-        filer: `${firstName} ${lastName}`,
+        filer,
         filingYear,
-        sourceName: normalizeSourceName(sourceName, dedupes),
+        sourceName: normalizedSourceName,
         address,
         cityAndState,
         amount,
