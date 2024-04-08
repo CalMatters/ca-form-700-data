@@ -284,8 +284,12 @@ The FPPC publishes only the PDF versions of each filing, though many of them are
 * John Osborn D'Agostino
 * Erica Yee
 * Alesha Riani Blaauw
+* Chris Woodard
 * Cristian Gonzalez
 * Emma Hall
 * Hailey Valdivia
+* Jack Freeman
+* Julianna Rodriguez
+* Katelyn Marano
 * Mercy Sosa
 * Nancy Rodriguez
