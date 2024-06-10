@@ -279,6 +279,7 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 
 ## Stories and projects that use this data
 
+* ["How California legislators got more than $1.4 million in travel and gifts in 2023"](https://calmatters.org/digital-democracy/2024/04/california-legislature-gifts-travel/) (CalMatters)
 * ["How free trips for California legislators lead to bills"](https://calmatters.org/politics/california-legislature/2023/05/california-legislature-trips-bills/) (CalMatters)
 * ["This law should reveal who's paying for California legislators' travel. It's only been used twice"](https://calmatters.org/politics/california-legislature/2023/05/california-legislators-travel-disclosure/) (CalMatters)
 * ["Environmentalists investing in Big Oil? Inside the surprising stock portfolios of California lawmakers"](https://www.latimes.com/california/story/2023-12-17/environmentalists-investing-in-big-oil-how-california-lawmakers-stocks-dont-align-with-their-politics) (LA Times)
