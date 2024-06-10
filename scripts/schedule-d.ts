@@ -1,5 +1,4 @@
 import _ from "npm:lodash";
-import { sum } from "npm:d3-array";
 import { csvParse } from "npm:d3-dsv";
 
 async function fetchCsv() {
@@ -21,37 +20,44 @@ function normalizeSourceName(sourceName, dedupes) {
 export default async function extractScheduleDDataFromForms(forms) {
   const dedupes = await fetchCsv();
   const contents = forms.filter((d) => d.contents).map((d) => {
-    const { contents, filingYear } = d;
+    const { contents, filerId, filingYear } = d;
     return {
       ...contents,
+      filerId,
       filingYear,
     };
   });
   const gifts = [];
 
   contents.forEach((form) => {
-    const { id: formId, filer, dGifts, filingYear } = form;
-    const { id: filerId, firstName, lastName } = filer;
+    const { filer, filerId, dGifts, filingYear } = form;
+    const { firstName, lastName } = filer;
 
     dGifts.forEach((gift) => {
-      if (!gift.items) return;
       const {
-        sourceName,
+        amendment,
       } = gift;
+      
+      const formId = amendment ? amendment.formId : form.id
+      const sourceName = amendment ? amendment.sourceName : gift.sourceName
+      const g = amendment || gift
+      
+      if (!g.items) return;
 
-      gift.items.forEach((item) => {
-        const { amount, date, address: description } = item;
+      g.items.forEach((item) => {
+        const { amount, date, address: description, reimbursedAmount } = item;
         gifts.push({
           filer: `${firstName} ${lastName}`,
           filingYear,
           sourceName: normalizeSourceName(sourceName, dedupes),
           amount,
+          reimbursedAmount: reimbursedAmount || 0,
           date,
           description,
           formUrl:
             `https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/${formId}.pdf`,
-          legislatorGlassHouseUrl:
-            `https://calmatters.org/legislator-tracker/${filerId}`,
+          legislatorDigitalDemocracyUrl:
+            `https://digitaldemocracy.calmatters.org/legislators/${filerId}`,
         });
       });
     });

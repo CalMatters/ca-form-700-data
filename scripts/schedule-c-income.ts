@@ -10,10 +10,13 @@ export default async function extractScheduleCDataFromForms(forms) {
 
   contents.forEach((form) => {
     try {
-      const { id: formId, filer, cIncomes, filingYear } = form;
+      const { filer, cIncomes, filingYear } = form;
       const { id: filerId, firstName, lastName } = filer;
 
       cIncomes.forEach((income) => {
+        const { amendment } = income
+        const formId = amendment ? amendment.formid : form.id
+        const i = amendment ? amendment : income
         const {
           saleOf,
           address,
@@ -24,7 +27,7 @@ export default async function extractScheduleCDataFromForms(forms) {
           businessActivity,
           otherDescription,
           commissionOrRentalIncomeDescription,
-        } = income;
+        } = i;
         incomeAndBusinessPositions.push({
           filer: `${firstName} ${lastName}`,
           filingYear,
@@ -39,8 +42,8 @@ export default async function extractScheduleCDataFromForms(forms) {
           otherDescription,
           formUrl:
             `https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/${formId}.pdf`,
-          legislatorGlassHouseUrl:
-            `https://calmatters.org/legislator-tracker/${filerId}`,
+          legislatorDigitalDemocracyUrl:
+            `https://digitaldemocracy.calmatters.org/legislators/${filerId}`,
         });
       });
     } catch (e) {

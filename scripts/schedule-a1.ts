@@ -21,18 +21,21 @@ export default async function extractScheduleA1DataFromForms(forms) {
 
   const contents = forms.filter((d) => d.contents)
     .map((d) => {
-      const { contents, filingYear } = d;
-      return { ...contents, filingYear };
+      const { contents, filerId, filingYear } = d;
+      return { ...contents, filerId, filingYear };
     });
   const investments = [];
 
   contents.forEach((form) => {
-    const { id: formId, filer, a1Investments, filingYear } = form;
-    const { id: filerId, firstName, lastName } = filer;
+    const { filer, filerId, a1Investments, filingYear } = form;
+    const { firstName, lastName } = filer;
 
     a1Investments.forEach((investment) => {
-      const { fmv, name, acquired, disposed } = investment;
-      let { nature, description } = investment
+      const { amendment } = investment
+      const formId = amendment ? amendment.formId : form.id
+      const i = amendment ? amendment : investment
+      const { fmv, name, acquired, disposed } = i;
+      let { nature, description } = i
 
       if (nature === "" && description.trim() === "Stock") {
         nature = "Stock"
@@ -49,8 +52,9 @@ export default async function extractScheduleA1DataFromForms(forms) {
         disposed,
         formUrl:
           `https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/${formId}.pdf`,
-        legislatorGlassHouseUrl:
-          `https://calmatters.org/legislator-tracker/${filerId}`,
+        legislatorDigitalDemocracyUrl:
+          `https://digitaldemocracy.calmatters.org/legislators/${filerId}`,
+          
       });
     });
   });

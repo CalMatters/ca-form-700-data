@@ -6,7 +6,7 @@ Structured and cleaned financial disclosure data for California legislators from
 
 ## Methodology
 
-The data is extracted by journalists from the legislator-submitted PDF versions of the forms which are downloaded from the FPPC. We attempt to match the reported information on the form to the extent possible.
+The data is extracted by journalists from the legislator-submitted PDF versions of the forms which are downloaded from the FPPC. We attempt to match the reported information on the form to the extent possible. We use amendments where they are filed.
 
 All of the names of people and organizations are subsequently normalized so that the data is easily compared and grouped. This is done with a two column lookup table per data schedule managed as a Google spreadsheet which is linked below with the cleaned data column.
 
@@ -28,23 +28,23 @@ Here is the data dictionary for the `schedule-a1.csv` file.
   <tbody>
     <tr>
       <td>filer</td>
-      <td>The legislator who filed the form.</td>
+      <td>The legislator who filed the form</td>
     </tr>
     <tr>
       <td>filingYear</td>
-      <td>The year in which the investment was owned, bought, or sold.</td>
+      <td>The year in which the investment was owned, bought, or sold</td>
     </tr>
     <tr>
       <td>name</td>
-      <td>The name of the investment, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1910584700&single=true">this spreadsheet</a>.</td>
+      <td>The name of the investment, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=1910584700&single=true">this spreadsheet</a></td>
     </tr>
     <tr>
       <td>description</td>
-      <td>Description supplied on the form.</td>
+      <td>Description supplied on the form</td>
     </tr>
     <tr>
       <td>fmv</td>
-      <td>"Fair market value" of the asset, categorized as one of the following: $2k - $10k, $10k - $100k, $100k - $1m, $1m+.</td>
+      <td>"Fair market value" of the asset, categorized as one of the following: $2k - $10k, $10k - $100k, $100k - $1m, $1m+</td>
     </tr>
     <tr>
       <td>nature</td>
@@ -52,19 +52,19 @@ Here is the data dictionary for the `schedule-a1.csv` file.
     </tr>
     <tr>
       <td>acquired</td>
-      <td>Date acquired, null when not in the same filing year.</td>
+      <td>Date acquired, null when not in the same filing year</td>
     </tr>
     <tr>
       <td>disposed</td>
-      <td>Date sold, null when not in the same filing year.</td>
+      <td>Date sold, null when not in the same filing year</td>
     </tr>
     <tr>
       <td>formUrl</td>
-      <td>A URL for the original PDF version of the form.</td>
+      <td>A URL for the PDF version of the form where the source data is located</td>
     </tr>
     <tr>
-      <td>legislatorGlassHouseUrl</td>
-      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+      <td>legislatorDigitalDemocracyUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Digital Democracy</td>
     </tr>
   </tbody>
 </table>
@@ -83,11 +83,11 @@ Here is the data dictionary for the `schedule-c-income.csv` file.
   <tbody>
     <tr>
       <td>filer</td>
-      <td>The legislator who filed the form.</td>
+      <td>The legislator who filed the form</td>
     </tr>
     <tr>
       <td>filingYear</td>
-      <td>The year in which the gift was given.</td>
+      <td>The year in which the gift was given</td>
     </tr>
     <tr>
       <td>sourceName</td>
@@ -110,7 +110,7 @@ Here is the data dictionary for the `schedule-c-income.csv` file.
       <td>grossIncome</td>
       <td>Total amount of income before deducting
       expenses, losses, or taxes and includes loans other
-      than loans from a commercial lending institutio</td>
+      than loans from a commercial lending institution</td>
     </tr>
     <tr>
       <td>consideration</td>
@@ -130,11 +130,11 @@ Here is the data dictionary for the `schedule-c-income.csv` file.
     </tr>
     <tr>
       <td>formUrl</td>
-      <td>A URL for the original PDF version of the form.</td>
+      <td>A URL for the PDF version of the form where the source data is located</td>
     </tr>
     <tr>
-      <td>legislatorGlassHouseUrl</td>
-      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+      <td>legislatorDigitalDemocracyUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Digital Democracy</td>
     </tr>
   </tbody>
 </table>
@@ -153,35 +153,39 @@ Here is the data dictionary for the `schedule-d.csv` file.
   <tbody>
     <tr>
       <td>filer</td>
-      <td>The legislator who filed the form.</td>
+      <td>The legislator who filed the form</td>
     </tr>
     <tr>
       <td>filingYear</td>
-      <td>The year in which the gift was given.</td>
+      <td>The year in which the gift was given</td>
     </tr>
     <tr>
       <td>sourceName</td>
-      <td>The name of the gift giver, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a>.</td>
+      <td>The name of the gift giver, normalized with <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSvMVqjLXOLoY5Jt1u8gmOBD_2IZit7yqKN8N94ubeOvyx94qyLCdLp19kAkp594OJzEfna5RO_Fcjv/pubhtml?gid=118444411&single=true">this spreadsheet</a></td>
     </tr>
     <tr>
       <td>amount</td>
-      <td>Dollar value of gift.</td>
+      <td>Dollar value of gift</td>
+    </tr>
+    <tr>
+      <td>reimbursedAmount</td>
+      <td>Dollars returned to the source</td>
     </tr>
     <tr>
       <td>date</td>
-      <td>Date the gift was given.</td>
+      <td>Date the gift was given</td>
     </tr>
     <tr>
       <td>description</td>
-      <td>A description of the gift.</td>
+      <td>A description of the gift</td>
     </tr>
     <tr>
       <td>formUrl</td>
-      <td>A URL for the original PDF version of the form.</td>
+      <td>A URL for the PDF version of the form where the source data is located</td>
     </tr>
     <tr>
-      <td>legislatorGlassHouseUrl</td>
-      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+      <td>legislatorDigitalDemocracyUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Digital Democracy</td>
     </tr>
   </tbody>
 </table>
@@ -229,6 +233,10 @@ Here is the data dictionary for the `schedule-e.csv` file.
       <td>Dollars spent on travel</td>
     </tr>
     <tr>
+      <td>reimbursedAmount</td>
+      <td>Dollars returned to the source</td>
+    </tr>
+    <tr>
       <td>onDate</td>
       <td>Starting date of sponsored travel</td>
     </tr>
@@ -254,11 +262,11 @@ Here is the data dictionary for the `schedule-e.csv` file.
     </tr>
     <tr>
       <td>formUrl</td>
-      <td>A URL for the original PDF version of the form</td>
+      <td>A URL for the PDF version of the form where the source data is located</td>
     </tr>
     <tr>
-      <td>legislatorGlassHouseUrl</td>
-      <td>A URL for the legislator's profile page on CalMatters' Glass House.</td>
+      <td>legislatorDigitalDemocracyUrl</td>
+      <td>A URL for the legislator's profile page on CalMatters' Digital Democracy.</td>
     </tr>
   </tbody>
 </table>
@@ -274,7 +282,7 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 * ["How free trips for California legislators lead to bills"](https://calmatters.org/politics/california-legislature/2023/05/california-legislature-trips-bills/) (CalMatters)
 * ["This law should reveal who's paying for California legislators' travel. It's only been used twice"](https://calmatters.org/politics/california-legislature/2023/05/california-legislators-travel-disclosure/) (CalMatters)
 * ["Environmentalists investing in Big Oil? Inside the surprising stock portfolios of California lawmakers"](https://www.latimes.com/california/story/2023-12-17/environmentalists-investing-in-big-oil-how-california-lawmakers-stocks-dont-align-with-their-politics) (LA Times)
-* [Glass House: California Legislator Tracker](https://calmatters.org/legislator-tracker/home/) (CalMatters)
+* [Digital Democracy](https://digitaldemocracy.calmatters.org/) (CalMatters)
 
 ## Credits
 

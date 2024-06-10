@@ -1,4 +1,4 @@
-import { csvFormat } from "npm:d3-dsv";
+import { csvFormat, csvParse } from "npm:d3-dsv";
 
 import scheduleA1 from "./schedule-a1.ts";
 import scheduleCIncome from "./schedule-c-income.ts";
@@ -15,6 +15,9 @@ const forms = await response.json();
 const formsWithoutGW = forms.filter((d) => {
   return d.filerId !== "george-washington";
 });
+const noAmendments = forms.filter(d => {
+  return d.type !== 'Amendment'
+})
 
 const outputs = [
   {
@@ -36,12 +39,12 @@ const outputs = [
 ];
 
 console.log(
-  `Found ${forms.length} forms, turning into ${outputs.length} CSV files`,
+  `Found ${noAmendments.length} forms, turning into ${outputs.length} CSV files`,
 );
 
 const out = outputs.map(async (output) => {
   const { filepath, transformer } = output;
-  const data = await transformer(formsWithoutGW);
+  const data = await transformer(noAmendments);
   const csv = csvFormat(data);
 
   console.log(

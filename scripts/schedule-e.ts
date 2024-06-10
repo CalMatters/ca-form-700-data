@@ -23,16 +23,19 @@ export default async function extractScheduleEDataFromForms(forms) {
 
   const contents = forms.filter((d) => d.contents)
     .map((d) => {
-      const { contents, filingYear } = d;
-      return { ...contents, filingYear };
+      const { contents, filerId, filingYear } = d;
+      return { ...contents, filerId, filingYear };
     });
   const incomes = [];
 
   contents.forEach((form) => {
-    const { id: formId, filer, eIncome, filingYear } = form;
-    const { id: filerId, firstName, lastName } = filer;
+    const { filer, filerId, eIncome, filingYear } = form;
+    const { firstName, lastName } = filer;
 
     eIncome.forEach((income) => {
+      const { amendment } = income
+      const formId = amendment ? amendment.formId : form.id
+      const i = amendment ? amendment : income
       const {
         amount,
         onDate,
@@ -42,16 +45,13 @@ export default async function extractScheduleEDataFromForms(forms) {
         cityAndState,
         giftOrIncome,
         otherDescription,
+        reimbursedAmount,
         giftTravelDestination,
         madeASpeechParticipatedInPanel,
-      } = income;
+      } = i;
 
       const filer = `${firstName} ${lastName}`
       const normalizedSourceName = normalizeSourceName(sourceName, dedupes)
-
-      if (sourceName && sourceName.includes('The Council of State Governments West')) {
-        console.log(filer, sourceName, '-', normalizedSourceName)
-      }
 
       incomes.push({
         filer,
@@ -60,6 +60,7 @@ export default async function extractScheduleEDataFromForms(forms) {
         address,
         cityAndState,
         amount,
+        reimbursedAmount: reimbursedAmount || 0,
         onDate,
         throughDate,
         giftOrIncome,
@@ -68,23 +69,16 @@ export default async function extractScheduleEDataFromForms(forms) {
         otherDescription,
         formUrl:
           `https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/${formId}.pdf`,
-        legislatorGlassHouseUrl:
-          `https://calmatters.org/legislator-tracker/${filerId}`,
+        legislatorDigitalDemocracyUrl:
+          `https://digitaldemocracy.calmatters.org/legislators/${filerId}`,
       });
     });
   });
 
   const overridden = incomes.map((d) => {
-    const { formUrl, amount } = d;
-
-    // zbur 2023 form was missing a decimal place
-    if (
-      formUrl.includes("59ca2a97-4e91-45e5-bdb7-f4c7cf56ab57") &&
-      amount === 107562
-    ) {
-      d.amount = 1075.62;
-    }
-
+    const { formUrl } = d;
+    // place to manually override specfic things, such as mistakes until
+    // they are fixed in a subsequent amendment
     return d;
   });
 
