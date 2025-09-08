@@ -10,10 +10,18 @@ async function fetchCsv() {
   return data;
 }
 
-function normalizeInvestmentName(name, dedupes) {
+function normalizeInvestmentName(name: string, dedupes) {
   const trimmed = name.trim();
   const match = dedupes.find((d) => d.name.trim() === trimmed);
   return match ? match.cleaned.trim() : trimmed;
+}
+
+function accountForMessyAcquisitionDispositionDates(d: string) {
+  if (!d) return null
+  if (d.includes('\n')) return null
+  if (d === '2024 24--/') return null
+  if (d === '2024 24-/-/') return null
+  return d
 }
 
 export default async function extractScheduleA1DataFromForms(forms) {
@@ -48,8 +56,8 @@ export default async function extractScheduleA1DataFromForms(forms) {
         description,
         fmv,
         nature,
-        acquired,
-        disposed,
+        acquired: accountForMessyAcquisitionDispositionDates(acquired),
+        disposed: accountForMessyAcquisitionDispositionDates(disposed),
         formUrl:
           `https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/${formId}.pdf`,
         legislatorDigitalDemocracyUrl:
@@ -61,7 +69,7 @@ export default async function extractScheduleA1DataFromForms(forms) {
 
   const sorted = _.orderBy(investments, [
     (d) => {
-      const [firstName, lastName] = d.filer.split(" ");
+      const [_firstName, lastName] = d.filer.split(" ");
       return lastName;
     },
     "filer",

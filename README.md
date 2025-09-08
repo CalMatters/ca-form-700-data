@@ -2,8 +2,6 @@
 
 Structured and cleaned financial disclosure data for California legislators from [Form 700](https://form700search.fppc.ca.gov/) filings.
 
-[![Scrape financial disclosure data](https://github.com/CalMatters/ca-form-700-data/actions/workflows/scrape.yml/badge.svg)](https://github.com/CalMatters/ca-form-700-data/actions/workflows/scrape.yml)
-
 ## Methodology
 
 The data is extracted by journalists from the legislator-submitted PDF versions of the forms which are downloaded from the FPPC. We attempt to match the reported information on the form to the extent possible. We use amendments where they are filed.
@@ -192,9 +190,9 @@ Here is the data dictionary for the `schedule-d.csv` file.
 
 #### Things to look out for when working with gift data
 
-Some legislators reported taking gifts that exceeded the FPPC's annual per-source limit ($520 in 2022) and included a note that says they returned the part of the gift exceeding the amount. This note isn't captured anywhere in our data, so if you notice anybody reporting a haul over the legal limit you should also look at the submitted form to confirm the legislator didn't return part of the gift. You can use the PDF available in the `formUrl` column for each gift.
+Some legislators reported taking gifts that exceeded [the FPPC's annual per-source limit ($590 in 2024)](https://www.fppc.ca.gov/learn/public-officials-and-employees-rules-/gifts-and-honoraria.html) and included a note that says they returned the part of the gift exceeding the amount. This note isn't captured anywhere in our data, so if you notice anybody reporting a haul over the legal limit you should also look at the submitted form to confirm the legislator didn't return part of the gift. You can use the PDF available in the `formUrl` column for each gift.
 
-Asm. Marie Waldron reported a gift total of over $3k in [her 2022 form](https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/eabd7aeb-88ee-481d-9d4e-a7e215bb665e.pdf) but it appears to be travel that should have been reported in Schedule E instead. CalMatters reached out to her office for clarification but has yet to hear back.
+Asm. Marie Waldron reported a gift total of over $3k in [her 2022 form](https://wcfweenxfcmsichcbyki.supabase.in/storage/v1/object/public/pdfs/eabd7aeb-88ee-481d-9d4e-a7e215bb665e.pdf) but it appears to be travel that should have been reported in Schedule E instead. CalMatters reached out to her office for clarification but did not hear back.
 
 ### Sponsored trips - Schedule E
 
@@ -288,7 +286,7 @@ If you use this dataset, please mention it was collected and cleaned by CalMatte
 
 ## Credits
 
-The FPPC publishes only the PDF versions of each filing, though many of them are submitted electronically. This data set was created by people going through all of the forms and creating structured data. The contributors are:
+The FPPC publishes only the PDF versions of each filing, though many of them are submitted electronically. This data set was created by people going through all of the forms to create and verify the structured data. The contributors are:
 
 * Jeremia Kimelman
 * John Osborn D'Agostino
@@ -303,3 +301,7 @@ The FPPC publishes only the PDF versions of each filing, though many of them are
 * Katelyn Marano
 * Mercy Sosa
 * Nancy Rodriguez
+* Mohamed Al Elew
+* Tomas Apodaca
+* Natasha Uzcátegui-Liggett
+* Soo Oh
